@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magifesta | Spettacoli, Musica & Magia - Bozza Redesign</title>
+    <!-- Font Google & FontAwesome Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #0F172A; /* Blu scuro elegante */
+            --accent: #EAB308;  /* Oro brillante */
+            --accent-hover: #CA8A04;
+            --secondary: #1E293B;
+            --text-light: #F8FAFC;
+            --text-muted: #94A3B8;
+            --text-dark: #334155;
+            --bg-light: #F1F5F9;
+            --whatsapp: #25D366;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* HEADER & NAV */
+        header {
+            background-color: var(--primary);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .logo i {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .btn-cta-nav {
+            background-color: var(--accent);
+            color: var(--primary) !important;
+            padding: 0.6rem 1.2rem;
+            border-radius: 30px;
+            font-weight: 700 !important;
+            transition: transform 0.2s, background-color 0.2s !important;
+        }
+
+        .btn-cta-nav:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.92) 0%, rgba(30, 41, 59, 0.88) 100%), 
+                        url('https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+            color: var(--text-light);
+            padding: 6rem 2rem 5rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(234, 179, 8, 0.2);
+            color: var(--accent);
+            border: 1px solid var(--accent);
+            padding: 0.4rem 1.2rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 span {
+            color: var(--accent);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            max-width: 750px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: var(--primary);
+            padding: 0.9rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(234, 179, 8, 0.4);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-3px);
+        }
+
+        .btn-whatsapp-hero {
+            background-color: var(--whatsapp);
+            color: white;
+            padding: 0.9rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+        }
+
+        .btn-whatsapp-hero:hover {
+            background-color: #1eb956;
+            transform: translateY(-3px);
+        }
+
+        /* SECTION COMMON */
+        section {
+            padding: 5rem 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 3.5rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+        }
+
+        .section-header p {
+            color: #64748B;
+            font-size: 1.1rem;
+        }
+
+        /* SHOW CARDS (SERVICES) */
+        .shows-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .show-card {
+            background-color: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #E2E8F0;
+        }
+
+        .show-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .show-img {
+            height: 220px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .show-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(15, 23, 42, 0.85);
+            color: var(--accent);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .show-body {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .show-body h3 {
+            font-size: 1.4rem;
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+        }
+
+        .show-body p {
+            color: #475569;
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .show-tags {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background-color: #F8FAFC;
+            border: 1px solid #CBD5E1;
+            color: #475569;
+            font-size: 0.75rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+
+        .btn-card {
+            text-align: center;
+            background-color: var(--primary);
+            color: white;
+            padding: 0.8rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+
+        .btn-card:hover {
+            background-color: #1E293B;
+        }
+
+        /* WHY ME / B2B SECTION */
+        .features-section {
+            background-color: var(--primary);
+            color: var(--text-light);
+        }
+
+        .features-section .section-header h2 {
+            color: var(--text-light);
+        }
+
+        .features-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-box {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .feature-box h3 {
+            margin-bottom: 0.8rem;
+            font-size: 1.2rem;
+        }
+
+        .feature-box p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* MEDIA & TESTIMONIALS */
+        .reviews-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .review-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--accent);
+        }
+
+        .stars {
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .review-text {
+            font-style: italic;
+            color: #334155;
+            margin-bottom: 1.2rem;
+            font-size: 0.95rem;
+        }
+
+        .review-author {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 0.9rem;
+        }
+
+        .review-role {
+            font-size: 0.8rem;
+            color: #94A3B8;
+        }
+
+        /* FOOTER & CONTACT */
+        footer {
+            background-color: #090D16;
+            color: var(--text-muted);
+            padding: 4rem 2rem 2rem;
+            font-size: 0.9rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h4 {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .footer-col p {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-col a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-col a:hover {
+            color: var(--accent);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            border-radius: 50%;
+            font-size: 1.1rem;
+        }
+
+        .social-links a:hover {
+            background: var(--accent);
+            color: var(--primary);
+        }
+
+        .copyright {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            font-size: 0.8rem;
+        }
+
+        /* FLOATING WHATSAPP BUTTON */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: var(--whatsapp);
+            color: white;
+            border-radius: 50px;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.5);
+            text-decoration: none;
+            font-weight: 700;
+            z-index: 9999;
+            transition: transform 0.3s;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.05);
+        }
+
+        .whatsapp-float i {
+            font-size: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 2rem; }
+            .hero p { font-size: 1rem; }
+            .whatsapp-text { display: none; }
+            .whatsapp-float { padding: 15px; border-radius: 50%; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <nav class="navbar">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-wand-magic-sparkles"></i> MAGIFESTA
+            </a>
+            <ul class="nav-links">
+                <li><a href="#spettacoli">Gli Spettacoli</a></li>
+                <li><a href="#perche-noi">Perché Sceglierci</a></li>
+                <li><a href="#recensioni">Recensioni</a></li>
+                <li><a href="#contatti">Contatti</a></li>
+                <li><a href="https://wa.me/393282117163" target="_blank" class="btn-cta-nav"><i class="fa-brands fa-whatsapp"></i> Verifica Data</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge"><i class="fa-solid fa-star"></i> Spettacoli & Musica Live</span>
+            <h1>L'emozione della Magia, il ritmo della Musica, la <span>Meraviglia delle Bolle</span>.</h1>
+            <p>Format d'intrattenimento esclusivi per Feste Private, Discoteche, Scuole, Piazze ed Eventi Aziendali curati da Marcello Lo Iacono.</p>
+            <div class="hero-buttons">
+                <a href="https://wa.me/393282117163?text=Ciao%20Marcello,%20vorrei%20informazioni%20sulla%20disponibilit%C3%A0%20per%20un%20evento" target="_blank" class="btn-whatsapp-hero">
+                    <i class="fa-brands fa-whatsapp"></i> Scrivimi su WhatsApp
+                </a>
+                <a href="#spettacoli" class="btn-primary">
+                    <i class="fa-solid fa-masks-theater"></i> Scopri gli Show
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- I TRE FORMAT PRINCIPALI -->
+    <section id="spettacoli">
+        <div class="section-header">
+            <h2>I Nostri Show Principali</h2>
+            <p>Esperienze uniche progettate per coinvolgere ed emozionare ogni tipologia di pubblico.</p>
+        </div>
+
+        <div class="shows-grid">
+            <!-- FORMAT 1: DJ SET & MAGIC -->
+            <div class="show-card">
+                <div class="show-img" style="background-image: url('https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=800&q=80');">
+                    <span class="show-badge">Top Eventi Serali</span>
+                </div>
+                <div class="show-body">
+                    <h3>THE SOUND OF MAGIC</h3>
+                    <p>DJ Set & Magic Show. Il ritmo leggendario dei '70, '80 e '90 rigenerato con remix moderni e fused con performance di magia live tra un beat e l'altro.</p>
+                    <div class="show-tags">
+                        <span class="tag">DJ Set Live</span>
+                        <span class="tag">Magia da Contatto</span>
+                        <span class="tag">Locali & Club</span>
+                    </div>
+                    <a href="https://wa.me/393282117163?text=Info%20per%20The%20Sound%20of%20Magic" class="btn-card">Richiedi Info Show</a>
+                </div>
+            </div>
+
+            <!-- FORMAT 2: BOLLE GIGANTI & FAMIGLIE -->
+            <div class="show-card">
+                <div class="show-img" style="background-image: url('https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=800&q=80');">
+                    <span class="show-badge">Famiglie & Scuole</span>
+                </div>
+                <div class="show-body">
+                    <h3>IL SIGNORE DELLE BOLLE</h3>
+                    <p>Un viaggio poetico e spettacolare nel mondo delle Bolle di Sapone Giganti. Giochi di luce, magia scenografica e coinvolgimento diretto per grandi e piccini.</p>
+                    <div class="show-tags">
+                        <span class="tag">Bolle Giganti</span>
+                        <span class="tag">Teatro & Piazze</span>
+                        <span class="tag">Per Tutte le Età</span>
+                    </div>
+                    <a href="https://wa.me/393282117163?text=Info%20per%20Il%20Signore%20delle%20Bolle" class="btn-card">Richiedi Info Show</a>
+                </div>
+            </div>
+
+            <!-- FORMAT 3: EVENTI AZIENDALI & PIAZZE -->
+            <div class="show-card">
+                <div class="show-img" style="background-image: url('https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=800&q=80');">
+                    <span class="show-badge">Soluzione B2B</span>
+                </div>
+                <div class="show-body">
+                    <h3>AZIENDE & PRO LOCO</h3>
+                    <p>Format d'intrattenimento "chiavi in mano" per convention, festival di piazza e centri commerciali. Service audio/luci autonomo e massima puntualità.</p>
+                    <div class="show-tags">
+                        <span class="tag">Service Completo</span>
+                        <span class="tag">Fatturazione Diretta</span>
+                        <span class="tag">Pro Loco & Enti</span>
+                    </div>
+                    <a href="https://wa.me/393282117163?text=Info%20per%20Eventi%20Aziendali%20o%20Piazze" class="btn-card">Richiedi Info Show</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PERCHÈ SCEGLIERE MAGIFESTA -->
+    <section class="features-section" id="perche-noi">
+        <div class="section-header">
+            <h2>Perché Affidarsi a Marcello</h2>
+            <p>Professionalità fiscale, artistica e tecnica per la massima serenità del tuo evento.</p>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-box">
+                <i class="fa-solid fa-file-invoice-dollar feature-icon"></i>
+                <h3>100% In Regola</h3>
+                <p>Socio EasyShow Coop. Agibilità INPS/ex-ENPALS e fatturazione elettronica garantita per qualsiasi struttura.</p>
+            </div>
+
+            <div class="feature-box">
+                <i class="fa-solid fa-sliders feature-icon"></i>
+                <h3>Service Audio & Luci</h3>
+                <p>Attrezzatura professionale autonoma adatta sia per ambienti chiusi che per ampi spazi all'aperto.</p>
+            </div>
+
+            <div class="feature-box">
+                <i class="fa-solid fa-user-check feature-icon"></i>
+                <h3>Esperienza Decennale</h3>
+                <p>Oltre 10 anni di spettacoli live, con capacità di adattare lo show al tipo di pubblico in tempo reale.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIANZE -->
+    <section id="recensioni">
+        <div class="section-header">
+            <h2>Cosa Dicono i Clienti</h2>
+            <p>La soddisfazione degli organizzatori e il sorriso del pubblico sono la mia migliore garanzia.</p>
+        </div>
+
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="review-text">"Marcello ha trasformato la serata nel nostro locale! La combinazione di DJ Set anni 80/90 con i trucchi di magia tra le tracce ha lasciato tutti a bocca aperta."</p>
+                <div class="review-author">Marco T.</div>
+                <div class="review-role">Gestore Club & Disco Bar</div>
+            </div>
+
+            <div class="review-card">
+                <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="review-text">"Lo spettacolo di bolle giganti durante la festa patronale è stato un successo incredibile. Bambini e genitori incantati dall'inizio alla fine."</p>
+                <div class="review-author">Elena V.</div>
+                <div class="review-role">Referente Pro Loco</div>
+            </div>
+
+            <div class="review-card">
+                <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="review-text">"Professionalità eccellente. Preventivo chiaro, puntualissimo con l'allestimento e massima disponibilità per le nostre esigenze aziendali."</p>
+                <div class="review-author">Roberto S.</div>
+                <div class="review-role">Organizer Eventi Corporate</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contatti">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>MAGIFESTA</h4>
+                <p>Spettacoli scenografici, DJ Set e Magia per rendere unico ed indimenticabile ogni tipo di evento.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://www.youtube.com" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Contatti Diretti</h4>
+                <p><i class="fa-solid fa-phone" style="color:var(--accent);"></i> Referente: Marcello Lo Iacono</p>
+                <p><i class="fa-solid fa-mobile-screen" style="color:var(--accent);"></i> Tel: <a href="tel:3282117163">328 211 7163</a></p>
+                <p><i class="fa-solid fa-envelope" style="color:var(--accent);"></i> Email: <a href="mailto:marcello1971@gmail.com">marcello1971@gmail.com</a></p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Informazioni Legali</h4>
+                <p>Marcello Lo Iacono socio <strong>EasyShow Coop Cooperativa a r.l.</strong></p>
+                <p>P.IVA / Cod. Fiscale: 03716630367</p>
+                <p>In regola con le normative ENPALS / INPS per spettacoli dal vivo.</p>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <p>&copy; Magifesta - Marcello Lo Iacono. Tutti i diritti riservati.</p>
+        </div>
+    </footer>
+
+    <!-- WHATSAPP FLOATING BUTTON -->
+    <a href="https://wa.me/393282117163?text=Ciao%20Marcello,%20vorrei%20informazioni%20sui%20tuoi%20spettacoli!" class="whatsapp-float" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+        <span class="whatsapp-text">Parla con Marcello</span>
+    </a>
+
+</body>
+</html>
