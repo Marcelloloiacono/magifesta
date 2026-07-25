@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Magifesta | Spettacoli, Musica & Magia - Bozza Redesign</title>
+    <title>Magifesta | Spettacoli, Musica & Magia</title>
     <!-- Font Google & FontAwesome Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,7 +15,7 @@
             --primary: #0F172A; /* Blu scuro elegante */
             --accent: #EAB308;  /* Oro brillante */
             --accent-hover: #CA8A04;
-            --secondary: #1E293B;
+            --secondary: #1E293B; /* Blu notte medio */
             --text-light: #F8FAFC;
             --text-muted: #94A3B8;
             --text-dark: #334155;
@@ -317,10 +317,17 @@
             background-color: #1E293B;
         }
 
-        /* WHY ME / B2B SECTION */
+        /* FEATURE SECTIONS GENERAL */
         .features-section {
             background-color: var(--primary);
             color: var(--text-light);
+        }
+
+        /* PERSONALIZZAZIONE SEZIONE SERVIZI */
+        #servizi {
+            background-color: var(--secondary);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .features-section .section-header h2 {
@@ -510,10 +517,11 @@
     <header>
         <nav class="navbar">
             <a href="#" class="logo">
-                <i class="fa-solid fa-wand-magic-sparkles"></i> MAGIFESTA
+                <i class="fa-solid fa-masks-theater"></i> MAGIFESTA
             </a>
             <ul class="nav-links">
                 <li><a href="#spettacoli">Gli Spettacoli</a></li>
+                <li><a href="#servizi">Servizi</a></li>
                 <li><a href="#perche-noi">Perché Sceglierci</a></li>
                 <li><a href="#recensioni">Recensioni</a></li>
                 <li><a href="#contatti">Contatti</a></li>
@@ -549,7 +557,7 @@
         <div class="shows-grid">
             <!-- FORMAT 1: DJ SET & MAGIC -->
             <div class="show-card">
-                <div class="show-img" style="background-image: url('https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=800&q=80');">
+                <div class="show-img" style="background-image: url('https://marcelloloiacono.github.io/magifesta/dj%20e%20magie.png?auto=format&fit=crop&w=800&q=80');">
                     <span class="show-badge">Top Eventi Serali</span>
                 </div>
                 <div class="show-body">
@@ -566,7 +574,7 @@
 
             <!-- FORMAT 2: BOLLE GIGANTI & FAMIGLIE -->
             <div class="show-card">
-                <div class="show-img" style="background-image: url('https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=800&q=80');">
+                <div class="show-img" style="background-image: url('https://marcelloloiacono.github.io/magifesta/Il%20signore%20delle%20bolle%20HD.jpeg?auto=format&fit=crop&w=800&q=80');">
                     <span class="show-badge">Famiglie & Scuole</span>
                 </div>
                 <div class="show-body">
@@ -583,7 +591,7 @@
 
             <!-- FORMAT 3: EVENTI AZIENDALI & PIAZZE -->
             <div class="show-card">
-                <div class="show-img" style="background-image: url('https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=800&q=80');">
+                <div class="show-img" style="background-image: url('https://marcelloloiacono.github.io/magifesta/mar-ale.jpg?auto=format&fit=crop&w=800&q=80');">
                     <span class="show-badge">Soluzione B2B</span>
                 </div>
                 <div class="show-body">
@@ -596,6 +604,34 @@
                     </div>
                     <a href="https://wa.me/393282117163?text=Info%20per%20Eventi%20Aziendali%20o%20Piazze" class="btn-card">Richiedi Info Show</a>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVIZI SPECIALI: COMPOSIZIONE MUSICHE SU MISURA -->
+    <section class="features-section" id="servizi">
+        <div class="section-header">
+            <h2>Composizione Musiche Personalizzate</h2>
+            <p>Brani inediti e su misura realizzati per dare voce alle tue emozioni e rendere indimenticabile ogni occasione.</p>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-box">
+                <i class="fa-solid fa-music feature-icon"></i>
+                <h3>Privati & Feste Speciali</h3>
+                <p>Dalle colone sonore per matrimoni ai brani dedicati per compleanni e anniversari: un regalo musicale unico che parla di voi.</p>
+            </div>
+
+            <div class="feature-box">
+                <i class="fa-solid fa-sliders feature-icon"></i>
+                <h3>Aziende & Brand Identity</h3>
+                <p>Jingle, sigle ed identità sonore su misura per aziende, spot pubblicitari, presentazioni di prodotto ed eventi corporate.</p>
+            </div>
+
+            <div class="feature-box">
+                <i class="fa-solid fa-compact-disc feature-icon"></i>
+                <h3>Produzione Su Misura</h3>
+                <p>Arrangiamenti e sonorità studiati nei minimi dettagli per rispecchiare esattamente lo stile e i desideri del cliente.</p>
             </div>
         </div>
     </section>
@@ -622,8 +658,8 @@
 
             <div class="feature-box">
                 <i class="fa-solid fa-user-check feature-icon"></i>
-                <h3>Esperienza Decennale</h3>
-                <p>Oltre 10 anni di spettacoli live, con capacità di adattare lo show al tipo di pubblico in tempo reale.</p>
+                <h3>Esperienza Trentennale</h3>
+                <p>Oltre 30 anni di spettacoli live, con capacità di adattare lo show al tipo di pubblico in tempo reale.</p>
             </div>
         </div>
     </section>
