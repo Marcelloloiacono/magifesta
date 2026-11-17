@@ -539,6 +539,34 @@
             .whatsapp-text { display: none; }
             .whatsapp-float { padding: 15px; border-radius: 50%; }
         }
+        .image-container {
+    position: relative;
+    height: 220px; /* Imposta l'altezza uguale a quella che avevi per le altre immagini */
+    background-size: cover;
+    background-position: center;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+}
+
+.play-button-overlay {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ff0000;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: background-color 0.3s ease;
+    z-index: 10; /* Assicura che il pulsante stia sopra l'immagine */
+}
+
+.play-button-overlay:hover {
+    background-color: #cc0000;
+}
     </style>
 </head>
 <body>
@@ -587,19 +615,13 @@
         <div class="shows-grid">
             <!-- FORMAT 1: DJ SET & MAGIC -->
             <div class="show-card">
-                <div class="show-img" style="background-image: url('https://marcelloloiacono.github.io/magifesta/DJDoctorWhy.png?auto=format&fit=crop&w=800&q=80');">
+                <div class="image-container" style="background-image: url('https://marcelloloiacono.github.io/magifesta/DJDoctorWhy.png?auto=format&fit=crop&w=800&q=80');">
                     <span class="show-badge">Top Eventi Serali</span>
+                    <!-- Il pulsante per ascoltare il sound posizionato sopra l'immagine -->
+                    <a href="https://www.youtube.com/watch?v=TxxY_huItwA&list=PLWYo9nWDMW0yH3OoyZP_msKZtgGxMwZ_w" target="_blank" class="play-button-overlay">
+                        🎵 Ascolta il Sound
+                    </a>
                 </div>
-                <div class="image-container">
- 
-    
-    <!-- Il nuovo pulsante per ascoltare il sound -->
-    <a href="https://www.youtube.com/watch?v=TxxY_huItwA&list=PLWYo9nWDMW0yH3OoyZP_msKZtgGxMwZ_w" 
-       target="_blank" 
-       class="play-button-overlay">
-       Ascolta il Sound
-    </a>
-</div>
                 <div class="show-body">
                     <h3>THE SOUND OF MAGIC</h3>
                     <p>DJ Set & Magic Show. Il ritmo leggendario dei '70, '80 e '90 rigenerato con remix moderni e fused con performance di magia live tra un beat e l'altro.</p>
@@ -614,18 +636,13 @@
 
             <!-- FORMAT 2: BOLLE GIGANTI & FAMIGLIE -->
             <div class="show-card">
-                <div class="show-img" style="background-image: url('https://marcelloloiacono.github.io/magifesta/Il%20signore%20delle%20bolle%20HD.jpeg?auto=format&fit=crop&w=800&q=80');">
+                <div class="image-container" style="background-image: url('https://marcelloloiacono.github.io/magifesta/Il%20signore%20delle%20bolle%20HD.jpeg?auto=format&fit=crop&w=800&q=80');">
                     <span class="show-badge">Famiglie & Scuole</span>
+                    <!-- Il pulsante per vedere il video posizionato sopra l'immagine -->
+                    <a href="https://youtu.be/sSN_YtllnvA?si=m_cqHskqb3P-FMIT" target="_blank" class="play-button-overlay">
+                        ▶️ Guarda il Video
+                    </a>
                 </div>
-                 <div class="image-container">
- 
-    
-    <!-- Il nuovo pulsante per vedere il video -->
-    <a href="https://youtu.be/sSN_YtllnvA?si=m_cqHskqb3P-FMIT" 
-       target="_blank" 
-       class="play-button-overlay">
-       Guarda il Video
-    </a>
                 <div class="show-body">
                     <h3>IL SIGNORE DELLE BOLLE</h3>
                     <p>Un viaggio poetico e spettacolare nel mondo delle Bolle di Sapone Giganti. Giochi di luce, magia scenografica e coinvolgimento diretto per grandi e piccini.</p>
