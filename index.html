@@ -106,6 +106,36 @@
             transform: translateY(-2px);
         }
 
+        .image-container {
+    position: relative;
+    display: inline-block; /* O block a seconda del tuo layout */
+}
+
+.image-container img {
+    display: block;
+    width: 100%; /* Adatta alle tue esigenze */
+    height: auto;
+}
+
+.play-button-overlay {
+    position: absolute;
+    bottom: 20px; /* Distanza dal fondo dell'immagine */
+    left: 50%;
+    transform: translateX(-50%); /* Centra perfettamente il pulsante in orizzontale */
+    background-color: #ff0000; /* Colore stile YouTube o personalizzato */
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: background-color 0.3s ease;
+}
+
+.play-button-overlay:hover {
+    background-color: #cc0000; /* Colore al passaggio del mouse */
+}
+
         /* HERO SECTION */
         .hero {
             background: linear-gradient(135deg, rgba(15, 23, 42, 0.80) 0%, rgba(30, 41, 59, 0.70) 100%), 
